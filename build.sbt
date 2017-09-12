@@ -1,7 +1,7 @@
 import sbt.Keys._
 
 val core = Project("enum-utils", file("core"))
-  .enablePlugins(LibPlugin)
+  .enablePlugins(OssLibPlugin)
   .settings(organization := "com.thenewmotion",
     name := "enum-utils",
     libraryDependencies ++= Seq(
@@ -10,7 +10,7 @@ val core = Project("enum-utils", file("core"))
   )
 
 val sprayJson = Project("enum-utils-spray-json", file("spray-json"))
-  .enablePlugins(LibPlugin)
+  .enablePlugins(OssLibPlugin)
   .dependsOn(core)
   .settings(
     organization := "com.thenewmotion",
