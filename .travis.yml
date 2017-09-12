@@ -1,0 +1,12 @@
+language: scala
+scala:
+  - 2.11.11
+  - 2.12.3
+jdk:
+  - oraclejdk8
+notifications:
+  slack: thenewmotion:AXSluctig1mmZbeKRDeeY41s
+cache:
+  directories:
+    - $HOME/.sbt
+    - $HOME/.ivy2/cache
