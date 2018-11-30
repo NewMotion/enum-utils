@@ -6,8 +6,6 @@ import org.specs2.specification.Scope
 class EnumUtilsSpec extends Specification {
 
   "EnumUtils" should {
-    import enums.EnumUtils._
-
     "enable searching for name" in new Scope {
       sealed trait SomeEnum extends Nameable
       object SomeEnum extends Enumerable[SomeEnum] {
@@ -18,7 +16,7 @@ class EnumUtilsSpec extends Specification {
     }
   }
 
-  "reflection.EnumUtils defined at top-level" should {
+  "reflection.Nameable defined at top-level" should {
 
     "enable searching for name without explicitly defining the name in the enum" in {
       SomeReflectiveEnum.withName("SomeReflectiveValue") mustEqual Some(SomeReflectiveEnum.SomeReflectiveValue)
@@ -26,8 +24,7 @@ class EnumUtilsSpec extends Specification {
   }
 }
 
-import enums.reflection.EnumUtils._
-sealed trait SomeReflectiveEnum extends Nameable
+sealed trait SomeReflectiveEnum extends reflection.Nameable
 object SomeReflectiveEnum extends Enumerable[SomeReflectiveEnum] {
   case object SomeReflectiveValue extends SomeReflectiveEnum
   val values = Set(SomeReflectiveValue)
