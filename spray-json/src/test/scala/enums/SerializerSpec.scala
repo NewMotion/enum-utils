@@ -18,7 +18,6 @@ class SerializerSpec extends Specification with DefaultJsonProtocol{
   }
 }
 
-import enums.EnumUtils._
 sealed trait SomeEnum extends Nameable
 object SomeEnum extends Enumerable[SomeEnum] {
   case object SomeValue extends SomeEnum {def name = "SomeValue"}

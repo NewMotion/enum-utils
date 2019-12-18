@@ -1,8 +1,6 @@
 package enums
 
-
 import spray.json.{JsString, JsValue, JsonFormat, _}
-import enums.EnumUtils._
 
 class SimpleStringEnumSerializer[T <: Nameable](enum: Enumerable[T]) {
   implicit val enumFormat = new JsonFormat[T] {
